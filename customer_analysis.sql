@@ -1,4 +1,28 @@
 /* ===================================================
+CUSTOMER PURCHASE BEHAVIOR ANALYSIS
+SQL PORTFOLIO PROJECT
+Author: Matthew Schneider
+Tools: SQLite, SQL, Tableau
+=================================================== */
+
+/*
+
+Project Objective:
+Analyze customer purchasing behavior, customer demographics,
+and sales performance to identify high-value customer segments
+and key drivers of revenue.
+
+Key Concepts Demonstrated:
+- JOINs
+- Aggregations
+- CASE Statements
+- CTEs
+- Window Functions
+- Customer Segmentation
+
+*/
+
+/* ===================================================
 SECTION 1: CUSTOMER ANALYSIS BASE DATA
 =================================================== */
 
@@ -31,6 +55,7 @@ SELECT
 FROM users u
 INNER JOIN orders o
     ON u.user_id = o.user_id;
+
 /* ===================================================
 SECTION 2: BASIC KPI
 =================================================== */
@@ -43,6 +68,7 @@ SELECT
     ROUND(AVG(sales_amount), 2) AS avg_order_value,
     ROUND(SUM(sales_amount), 2) AS total_revenue
 FROM orders;
+
 /* ===================================================
 SECTION 3: INCOME vs. SPENDING
 =================================================== */
@@ -74,6 +100,7 @@ SELECT
 FROM customer_orders
 GROUP BY income_group
 ORDER BY avg_order_value DESC;
+
 /* ===================================================
 SECTION 4: AGE GROUP ANALYSIS
 =================================================== */
@@ -104,6 +131,7 @@ SELECT
 FROM customer_orders
 GROUP BY age_group
 ORDER BY avg_order_value DESC;
+
 /* ===================================================
 SECTION 5: FAMILY SIZE IMPACT
 =================================================== */
@@ -118,6 +146,7 @@ INNER JOIN orders o
     ON u.user_id = o.user_id
 GROUP BY u.family_size
 ORDER BY avg_order_value DESC;
+
 /* ===================================================
 SECTION 6: GENDER ANALYSIS
 =================================================== */
@@ -132,6 +161,7 @@ INNER JOIN orders o
     ON u.user_id = o.user_id
 GROUP BY u.gender
 ORDER BY avg_order_value DESC;
+
 /* ===================================================
 SECTION 7: HIGH VALUE SEGMENT IDENTIFICATION
 =================================================== */
