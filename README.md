@@ -1,8 +1,10 @@
-# Customer, Restaurant & Sales Performance Analysis (SQL)
+# Customer Segmentation & Purchase Behavior Analysis (SQL)
 
 ## Project Overview
 
-This project analyzes customer purchasing behavior to identify how demographic characteristics—including income, age, family size, and gender—influence order value and purchasing patterns. Using SQL for data analysis and Tableau for visualization, the project explores key drivers of customer spending and highlights actionable business insights that can support customer segmentation and marketing strategy.
+This project analyzes customer purchasing behavior to identify how demographic characteristics—including income, age, family size, and gender—influence order value and purchasing patterns. Using SQL for data analysis and Tableau for visualization, the project explores key drivers of customer spending and highlights actionable business insights that can support customer segmentation, marketing strategy, and business decision-making.
+
+---
 
 ## Business Questions
 
@@ -11,33 +13,53 @@ This project analyzes customer purchasing behavior to identify how demographic c
 3. Which customer segments drive sales volume versus transaction value?
 4. What customer characteristics best explain spending behavior?
 
+---
+
 ## Tools & Technologies
 
-* SQL
+* SQL (SQLite)
 * Tableau
 * Excel / CSV
 
-## SQL Techniques Used
+---
 
-* Data filtering and aggregation
-* GROUP BY analysis
+## SQL Skills Demonstrated
+
+* INNER JOINs across relational datasets
+* Aggregations and KPI reporting
+* Customer segmentation using CASE statements
 * Common Table Expressions (CTEs)
-* Window Functions
-* Customer segmentation
-* Statistical comparisons across demographic groups
+* Window Functions (RANK)
+* Revenue and customer behavior analysis
+* Business-focused insight generation
 
-## Dataset
+---
 
-The dataset contains customer demographic information and purchase activity, with one recorded order per customer.
+## Dataset Structure
 
-### Key Fields
+### users.csv
 
-* Customer ID
-* Income
-* Age
-* Family Size
-* Gender
-* Order Value
+Contains customer demographic information:
+
+* user_id
+* name
+* age
+* gender
+* income
+* family_size
+
+### orders.csv
+
+Contains customer transaction information:
+
+* order_id
+* user_id
+* order_date
+* sales_amount
+
+The datasets are linked through user_id, allowing customer demographic attributes to be analyzed alongside purchasing behavior.
+
+---
 
 ## Key Findings
 
@@ -50,7 +72,7 @@ The dataset contains customer demographic information and purchase activity, wit
 ### Family Structure
 
 * Couples placed the highest-value orders among all family-size segments.
-* Larger household size did not necessarily correspond with higher spending.
+* Larger household sizes did not necessarily correspond with higher spending.
 
 ### Gender Analysis
 
@@ -60,6 +82,8 @@ The dataset contains customer demographic information and purchase activity, wit
 
 * Customers reporting no income generated the largest share of sales volume due to customer count rather than individual spending levels.
 
+---
+
 ## Key Metrics
 
 | Metric              | Value |
@@ -68,11 +92,21 @@ The dataset contains customer demographic information and purchase activity, wit
 | Average Family Size | 3     |
 | Orders per Customer | 1     |
 
+---
+
 ## Dashboard
 
-View the interactive Tableau dashboard here:
+View the interactive Tableau dashboard:
 
-[Customer Purchase Behavior Dashboard](https://public.tableau.com/views/FinalProject-MatthewSchneider/Dashboard1?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+Customer Purchase Behavior Dashboard
+
+https://public.tableau.com/views/FinalProject-MatthewSchneider/Dashboard1?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
+
+### Dashboard Preview
+
+![Dashboard Preview](dashboard_screenshot.png)
+
+---
 
 ## Business Recommendations
 
@@ -81,16 +115,29 @@ View the interactive Tableau dashboard here:
 * Evaluate demographic characteristics beyond income when designing customer acquisition strategies.
 * Further investigate spending behavior using longitudinal data to better understand customer lifetime value.
 
+---
+
 ## Limitations
 
 * Each customer has only one recorded transaction.
 * Analysis reflects single-purchase behavior rather than long-term customer value.
 * Findings should be validated using repeat-purchase and longitudinal customer data.
 
+---
+
 ## Repository Contents
 
-* SQL Queries
-* Cleaned Dataset
-* Tableau Dashboard
-* Project Documentation
-* Supporting Visualizations
+* customer_analysis.sql — SQL analysis queries
+* README.md — Project documentation
+* users.csv — Customer dataset
+* orders.csv — Order dataset
+* dashboard_screenshot.png — Tableau dashboard preview
+
+---
+
+## Author
+
+Matthew Schneider
+
+Data Analytics Portfolio Project
+
