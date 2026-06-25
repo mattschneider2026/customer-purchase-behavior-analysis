@@ -96,11 +96,9 @@ The datasets are linked through user_id, allowing customer demographic attribute
 
 ## Dashboard
 
-View the interactive Tableau dashboard:
+[View Interactive Tableau Dashboard](https://public.tableau.com/views/FinalProject-MatthewSchneider/Dashboard1?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
-Customer Purchase Behavior Dashboard
 
-https://public.tableau.com/views/FinalProject-MatthewSchneider/Dashboard1?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
 
 ### Dashboard Preview
 
